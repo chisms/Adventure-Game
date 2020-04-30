@@ -8,6 +8,9 @@ public class Location {
     private final String description;
     private final Map<String, Integer> exits;
 
+    
+    // Creates a location using the given ID, the provided description, as well as the where the location is.
+    // Ensures the exit to the game can't be null.
     public Location(int locationID, String description, Map<String, Integer> exits) {
         this.locationID = locationID;
         this.description = description;
@@ -19,19 +22,18 @@ public class Location {
 
             this.exits.put("Q", 0);
     }
-
-//    public void addExit(String direction, int location){
-//        exits.put(direction, location);
-//    }
-
+    
+    // Returns the player's current location
     public int getLocationID() {
         return locationID;
     }
 
+    // Returns the description of the current location
     public String getDescription() {
         return description;
     }
 
+    // Provides the application with a HAsh map of exits
     public Map<String, Integer> getExits() {
         return new HashMap<String, Integer>(exits);
     }
